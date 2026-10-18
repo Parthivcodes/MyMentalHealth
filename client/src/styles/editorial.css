@@ -1,0 +1,118 @@
+/* Shared editorial layout: presentation only; feature logic stays in each page. */
+:root { --cc-sage: #9b7ab9; --cc-sage-dark: #75538e; --cc-sage-soft: #f0e8f7; --bs-link-color-rgb: 117,83,142; --bs-primary-rgb: 155,122,185; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+body { overflow-x: clip; }
+.cc-nav { position: sticky; top: 0; z-index: 1030; background: #faf9f6ed; backdrop-filter: blur(18px); border-bottom: 1px solid #e9e5df80; }
+.cc-nav .container { flex-wrap: wrap; }
+.cc-nav .navbar-nav { flex-wrap: wrap; }
+.cc-nav .nav-link { font-size: .75rem; padding-inline: .6rem !important; }
+.cc-brand { margin-right: 2.2rem; }
+.cc-landing-hero { padding-top: 3.8rem; }
+.cc-hero-heading h1 { font-size: clamp(2.8rem, 5.8vw, 5.4rem); font-weight: 400; letter-spacing: -.065em; }
+.cc-hero-heading { padding-bottom: 2.5rem; }
+.cc-hero-bottom { min-height: 400px; margin-top: -3rem; }
+.cc-wellness-art { position: relative; width: 116%; max-width: none; height: auto; margin: -1rem 0 -2rem -12%; transform: rotate(-6deg); filter: drop-shadow(0 25px 25px #5c44631a); animation: cc-sculpture-float 9s ease-in-out infinite; }
+.cc-hero-copy { padding-top: 4rem; }
+.cc-hero-copy > p { font-size: .86rem; }
+.cc-hero-foot { padding-top: 1.8rem; }
+.cc-wellness { position: relative; margin-top: 1rem; border-radius: 2.5rem; }
+.cc-wellness .cc-section-heading { position: relative; z-index: 1; }
+.cc-wellness .cc-spark { width: 250px; height: 130px; font-size: 0; background: url('/images/wellness-sculpture.png') center / contain no-repeat; transform: rotate(15deg); }
+.cc-join-flower { width: 380px; height: 300px; font-size: 0; background: url('/images/wellness-sculpture.png') center / contain no-repeat; transform: rotate(14deg); }
+.cc-reveal { opacity: .2; transform: translateY(35px); transition: opacity .8s ease, transform .8s ease; }
+.cc-reveal.cc-in-view,.cc-reveal:focus-within { opacity: 1; transform: none; }
+.cc-feature-card,.cc-service .cc-arrow,.cc-daily-shortcuts > a { transition: transform .3s ease, box-shadow .3s ease; }
+.cc-feature-card:hover { transform: translateY(-5px); }
+.cc-service:hover .cc-arrow { transform: rotate(45deg); }
+.cc-shell-inner { background: radial-gradient(ellipse 60% 400px at 100% 100px,#f9f3d9,transparent),radial-gradient(ellipse 70% 600px at 0 300px,#efe6f7,transparent),#faf9f6; }
+.cc-shell-inner .cc-main > .container { max-width: 1160px; padding-top: 2.5rem !important; padding-bottom: 5rem !important; }
+.cc-page-intro { position: relative; flex: 1 1 100%; width: 100%; display: flex; align-items: center; min-height: 260px; padding: 2.5rem 2.8rem; margin-bottom: 2rem; border: 1px solid #ddd8dd; border-radius: .4rem .4rem 2rem .4rem; background: linear-gradient(115deg,#faf9f680,#f5f0dc88); overflow: hidden; isolation: isolate; }
+.cc-page-intro-copy { position: relative; z-index: 1; max-width: 68%; }
+.cc-page-intro .cc-eyebrow { margin-bottom: 1.3rem; font-size: .62rem; }
+.cc-page-intro h1 { font-size: clamp(2.4rem,4.5vw,4.1rem); line-height: 1.13; font-weight: 400; margin: 0; letter-spacing: -.065em; }
+.cc-page-sculpture { width: 38%; height: 110%; object-fit: contain; position: absolute; right: -1%; top: 0; transform: rotate(-12deg); z-index: 0; pointer-events: none; }
+.cc-intro-index { position: absolute; bottom: 1.2rem; right: 2rem; font-size: .5rem; color: #766581; letter-spacing: .15em; }
+.cc-shell-inner .cc-panel { border-color: #e3dde7; border-radius: 1rem; padding: 1.7rem; box-shadow: 0 10px 40px #55426405; }
+.cc-shell-inner .cc-panel h2 { font-size: 1.35rem; font-weight: 500; }
+.cc-shell-inner .btn:not(.btn-link) { border-radius: 2rem; }
+.cc-shell-inner .form-control,.cc-shell-inner .form-select { border-color: #ded8e4; border-radius: .7rem; padding: .8rem 1rem; font-size: .9rem; }
+.cc-shell-inner .form-label { font-size: .8rem; color: #67616c; }
+.cc-shell-inner .table > :not(caption) > * > * { padding: 1rem; }
+.cc-shell-inner .nav-pills { background: #ebe5ef; padding: .45rem; border-radius: 2rem; gap: .25rem; }
+.cc-shell-inner .nav-pills .nav-link.active { background: #1d1e1b; color: white; border-radius: 2rem; }
+.cc-shell-inner .cc-helpline { background: #e9e0f0; border: 1px solid #dcd0e6; }
+.cc-shell-inner .cc-chat { border-radius: 1.4rem; padding: 1.5rem; background: #fffdfb; border-color: #ded8e4; }
+.cc-shell-inner .cc-message { border-radius: 1rem 1rem 1rem .2rem; background: #f0eee9; padding: .8rem 1rem; }
+.cc-shell-inner .cc-message.is-mine { background: #e9ddf2; border-radius: 1rem 1rem .2rem 1rem; }
+.cc-shell-inner .cc-auth { max-width: 480px !important; margin: 3rem auto; padding: 2.5rem !important; background: #fffdfbcc; border: 1px solid #e4dce9; border-radius: 1.6rem; }
+.cc-shell-inner .cc-auth h1 { font-size: 2.6rem; }
+.cc-shell-inner .cc-main > .container > h1 { font-size: clamp(2.3rem,4vw,3.5rem); padding: 1rem 0 2rem; border-bottom: 1px solid #ddd7e1; }
+.cc-dashboard .cc-page-intro { min-height: 350px; }
+.cc-daily-affirmation { max-width: 420px; font-size: .9rem; color: #776d7c; margin: 1.4rem 0; }
+.cc-daily-shortcuts { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-bottom: 2rem; }
+.cc-daily-shortcuts > a { position: relative; display: block; padding: 1.4rem; min-height: 164px; text-decoration: none; color: #242323; border: 1px solid #ded7e4; background: #f1e9f6; border-radius: 1rem; }
+.cc-daily-shortcuts > a:nth-child(2) { background: #f3f0de; }
+.cc-daily-shortcuts > a:nth-child(3) { background: #e8eeea; }
+.cc-daily-shortcuts > a:nth-child(4) { background: #e9edf4; }
+.cc-daily-shortcuts > a:hover { transform: translateY(-4px); box-shadow: 0 10px 20px #4c3a5810; }
+.cc-daily-shortcuts h2 { font-size: 1.65rem; margin-top: 1rem; }
+.cc-daily-shortcuts p { font-size: .7rem; color: #726c76; margin-bottom: 0; }
+.cc-daily-shortcuts .cc-arrow { position: absolute; right: 1.3rem; top: 1.2rem; }
+.cc-dashboard .cc-chart-panel { border: 8px solid #1d1e1b; border-top-width: 20px; border-radius: 1.5rem; }
+.cc-dashboard .cc-chart-panel > .d-flex { border-bottom: 1px solid #e3dce8; padding-bottom: 1rem; }
+.cc-dashboard .cc-journal-panel { background: #f6f3e9; }
+.cc-dashboard .cc-checkin-panel { background: #242521; color: #f7f6f2; border: 0; }
+.cc-dashboard .cc-checkin-panel .text-secondary { color: #c4c3bd !important; }
+.cc-dashboard .cc-checkin-panel a { color: #d5b8ec; }
+.cc-shell-inner .cc-main > .container:has(> .cc-page-intro) { max-width: 1160px !important; }
+.cc-shell-inner .cc-main > .container:has(> .cc-page-intro) > .d-grid { max-width: none !important; grid-template-columns: repeat(2,minmax(0,1fr)); }
+.cc-shell-inner .cc-main > .container:has(> .cc-page-intro) > .d-grid > .cc-panel { height: 100%; }
+.cc-shell-inner .cc-main > .container:has(> .cc-page-intro) > .d-flex.mb-4 { padding: 1rem 0; }
+@keyframes cc-sculpture-float { 0%,100% { transform: translateY(0) rotate(-6deg); } 50% { transform: translateY(-12px) rotate(-4deg); } }
+@media (max-width: 1199px) { .cc-hero-heading .cc-status { top: 0; } }
+@media (max-width: 991px) {
+  .cc-hero-bottom { margin-top: -1rem; } .cc-wellness-art { width: 100%; max-height: 420px; object-fit: contain; margin: 0; }
+  .cc-hero-copy { padding-top: 0; } .cc-page-intro { min-height: 230px; padding: 2rem; }
+  .cc-page-intro-copy { max-width: 70%; } .cc-page-sculpture { width: 42%; right: -5%; }
+  .cc-daily-shortcuts { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 575px) {
+  .cc-hero-heading h1 { font-size: 2.8rem; } .cc-landing-hero { padding-top: 2.2rem; }
+  .cc-hero-bottom { min-height: auto; } .cc-wellness-art { width: 112%; margin-left: -6%; margin-bottom: 1rem; }
+  .cc-wellness .cc-spark { width: 110px; height: 100px; flex-shrink: 0; }
+  .cc-page-intro { padding: 1.6rem; min-height: 300px; align-items: flex-start; }
+  .cc-page-intro-copy { max-width: 100%; } .cc-page-intro h1 { font-size: 2.6rem; }
+  .cc-page-intro .cc-eyebrow { font-size: .5rem; }
+  .cc-page-sculpture { width: 45%; height: 140px; top: auto; bottom: -5px; right: 0; opacity: .7; }
+  .cc-intro-index { left: 1.6rem; right: auto; }
+  .cc-dashboard .cc-page-intro { min-height: 400px; } .cc-dashboard .cc-page-sculpture { width: 55%; opacity: .3; }
+  .cc-dashboard .cc-page-intro-copy { max-width: 100%; }
+  .cc-shell-inner .cc-main > .container { padding-inline: 1rem; }
+  .cc-shell-inner .cc-panel { padding: 1.3rem; }
+  .cc-daily-shortcuts { gap: .7rem; } .cc-daily-shortcuts > a { padding: 1rem; }
+  .cc-daily-shortcuts p { max-width: 115px; } .cc-daily-shortcuts h2 { font-size: 1.4rem; }
+  .cc-shell-inner .cc-main > .container:has(> .cc-page-intro) > .d-grid { grid-template-columns: 1fr; }
+  .cc-shell-inner .cc-auth { margin: 1rem; width: calc(100% - 2rem); padding: 1.5rem !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+ html { scroll-behavior: auto; }
+ .cc-wellness-art { animation: none; }
+ .cc-reveal { opacity: 1; transform: none; transition: none; }
+ .cc-feature-card,.cc-service .cc-arrow,.cc-daily-shortcuts > a { transition: none; }
+}
+.cc-page-intro { text-align: left; }
+.cc-page-intro h1 { overflow-wrap: anywhere; }
+.cc-main > .container > .cc-panel h1 { font-size: 2.1rem; }
+.cc-shell-inner .cc-main > .container > form:not(.d-flex) { max-width: 760px; }
+.cc-shell-inner .cc-main > .container > .cc-panel:has(.form-control) { max-width: 760px; }
+.cc-shell-inner .cc-main > .container > .cc-page-intro ~ p { max-width: 760px; }
+.cc-shell-inner .cc-main > .container > .cc-page-intro ~ .cc-breath { margin-top: 3rem; margin-bottom: 3rem; }
+.btn-outline-primary { --bs-btn-border-color: #d9cce3; --bs-btn-hover-border-color: #b99bcd; }
+.cc-feature-art { background-image: url('/images/wellness-editorial.png'); background-size: 200% auto; background-repeat: no-repeat; height: 310px; }
+.cc-art-mood { background-position: left 30%; }
+.cc-art-journal { background-position: right 52%; }
+.cc-photo-people span { background: #e5ded5 url('/images/wellness-editorial.png') 8% 15% / 240% auto; }
+.cc-photo-people span:nth-child(2) { background: #e6e4e1 url('/images/wellness-editorial.png') 100% 45% / 300% auto; }
+.cc-photo-people span:nth-child(3) { background: #f1e5fa url('/images/wellness-sculpture.png') center / cover; }
+.cc-photo-people span:last-child { background: #e6e3ec; }
+@media (max-width: 767px) { .cc-feature-art { height: 290px; } }

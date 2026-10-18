@@ -1,0 +1,201 @@
+/* ---------- Navbar and footer ---------- */
+.cc-nav {
+  background: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid var(--cc-line);
+}
+
+.cc-brand {
+  font-family: var(--cc-font-heading);
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--cc-sage);
+}
+
+.cc-nav .nav-link {
+  white-space: nowrap;
+}
+
+.cc-nav .nav-link.active {
+  color: var(--cc-sage);
+  font-weight: 700;
+}
+
+.cc-footer {
+  border-top: 1px solid var(--cc-line);
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+  color: var(--cc-muted);
+}
+
+/* ---------- Home page ---------- */
+.cc-hero {
+  padding: 4.5rem 0 3.5rem;
+}
+
+.cc-hero h1 {
+  font-size: clamp(2.3rem, 5vw, 3.5rem);
+  max-width: 14ch;
+}
+
+.cc-hero .lead {
+  max-width: 36rem;
+  color: var(--cc-muted);
+}
+
+.cc-features {
+  padding: 3rem 0;
+}
+
+.cc-features h2 {
+  font-size: 1.2rem;
+}
+
+.cc-features p {
+  color: var(--cc-muted);
+  max-width: 30rem;
+}
+
+.cc-helpline {
+  background: var(--cc-sky-soft);
+  border-radius: var(--cc-radius);
+  padding: 1.25rem 1.5rem;
+}
+
+/* ---------- Breathing circle ---------- */
+.cc-breath {
+  position: relative;
+  width: min(340px, 80vw);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+}
+
+.cc-breath::before {
+  content: "";
+  position: absolute;
+  inset: -8%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(185, 216, 207, 0.55) 0%, rgba(201, 223, 240, 0.25) 55%, transparent 72%);
+}
+
+.cc-breath-circle {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #e3f1ec 0%, #bcdcd2 55%, #a9cfe0 100%);
+  animation: cc-breathe 16s ease-in-out infinite;
+}
+
+@keyframes cc-breathe {
+  0%   { transform: scale(0.6); }
+  25%  { transform: scale(1); }
+  50%  { transform: scale(1); }
+  75%  { transform: scale(0.6); }
+  100% { transform: scale(0.6); }
+}
+
+.cc-breath-text {
+  position: relative;
+  display: grid;
+  text-align: center;
+  color: var(--cc-ink);
+}
+
+.cc-breath-label {
+  font-family: var(--cc-font-heading);
+  font-weight: 700;
+  font-size: 1.35rem;
+}
+
+.cc-breath-count {
+  font-size: 1rem;
+  color: var(--cc-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-breath-circle {
+    animation: none;
+  }
+}
+
+/* ---------- Auth forms ---------- */
+.cc-auth {
+  max-width: 26rem;
+  padding: 3rem 0;
+}
+
+.cc-choice {
+  display: grid;
+  gap: 0.15rem;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  border: 1.5px solid var(--cc-line);
+  border-radius: var(--cc-radius);
+  background: var(--cc-surface);
+  color: var(--cc-ink);
+}
+
+.cc-choice span {
+  font-size: 0.9rem;
+  color: var(--cc-muted);
+}
+
+.cc-choice.is-selected {
+  border-color: var(--cc-sage);
+  background: var(--cc-sage-soft);
+}
+
+/* ---------- Chat ---------- */
+.cc-chat {
+  height: 26rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--cc-surface);
+  border: 1px solid var(--cc-line);
+  border-radius: var(--cc-radius);
+}
+
+.cc-message {
+  display: flex;
+  align-items: flex-start;
+  align-self: flex-start;
+  max-width: 80%;
+  padding: 0.55rem 0.85rem;
+  border-radius: 0.75rem;
+  background: var(--cc-paper);
+}
+
+.cc-message.is-mine {
+  align-self: flex-end;
+  background: var(--cc-sage-soft);
+}
+
+.cc-message-time {
+  font-size: 0.75rem;
+  color: var(--cc-muted);
+  margin-top: 0.15rem;
+}
+
+/* ---------- Shared bits ---------- */
+.cc-panel {
+  background: var(--cc-surface);
+  border: 1px solid var(--cc-line);
+  border-radius: var(--cc-radius);
+  padding: 1.25rem 1.5rem;
+}
+
+.cc-streak {
+  color: var(--cc-marigold);
+}
+
+.cc-quote {
+  border: 1.5px dashed #c3d3ce;
+  border-radius: var(--cc-radius);
+  padding: 1rem 1.25rem;
+  color: var(--cc-muted);
+}
